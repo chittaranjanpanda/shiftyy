@@ -26,7 +26,7 @@ public class ShiftyUtil {
 	public static XSSFWorkbook getExcelFromTracker(Tracker tracker) throws IOException {
 		
 		
-		XSSFWorkbook wb = new XSSFWorkbook(new FileInputStream(new ClassPathResource("template.xlsx").getFile()));
+		XSSFWorkbook wb = new XSSFWorkbook(new ClassPathResource("template.xlsx").getInputStream());
 		XSSFSheet sheet = wb.getSheet("Shift Allowance Tracker");
 
 		sheet.getRow(1).getCell(3).setCellValue(tracker.getMonth());
