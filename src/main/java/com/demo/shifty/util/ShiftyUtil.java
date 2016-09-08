@@ -1,6 +1,5 @@
 package com.demo.shifty.util;
 
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.text.DateFormat;
@@ -72,18 +71,25 @@ public class ShiftyUtil {
 				for (int j = 2; j <= (content.length - 2); j++) {
 					if (content[j].contains("Present")) {
 						String[] eachDay = content[j].split(" ");
-						try {
-							daysWorked.add(xslDateFmt.format(pdfDateFmt.parse(eachDay[0])));
-						} catch (ParseException e) {
+						
+						Double outTime = Double.valueOf(eachDay[4].replace(":", "."));
+						Double duration = Double.valueOf(eachDay[7].replace(":", "."));
+						
+						if(outTime > 21.30 && duration > 8){
+							try {
+								daysWorked.add(xslDateFmt.format(pdfDateFmt.parse(eachDay[0])));
+							} catch (ParseException e) {
+							}
 						}
+						
 					}
 				}
 
-				tracker.setMonth(
-						new DateFormatSymbols().getMonths()[(Integer.valueOf(daysWorked.get(0).split("/")[1])) - 1]);
+				tracker.setMonth(new DateFormatSymbols().getMonths()[(Integer.valueOf(daysWorked.get(0).split("/")[1])) - 1]);
 				tracker.setDaysWorked(daysWorked);
 			}
 		}
 		return tracker;
 	}
+	
 }
