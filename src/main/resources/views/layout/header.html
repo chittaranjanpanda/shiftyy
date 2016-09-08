@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.thymeleaf.org">
+	<head th:fragment="headerFragment">
+		<meta charset="utf-8" />
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	    <meta name="description" content="" />
+	    <meta name="author" content="" />
+
+		<title th:include=":: #pageTitle">Shiftyy Application</title>
+		
+		<link rel="icon" type="image/x-icon" href="" />
+	
+	    <!-- Bootstrap Core CSS -->
+	    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" th:href="@{css/bootstrap.min.css}" />
+	
+	    <!-- Custom CSS -->
+	    <link rel="stylesheet" type="text/css" href="css/custom.css"  th:href="@{css/custom.css}" />
+	
+	    <!-- Custom Fonts -->
+	    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" th:href="@{font-awesome/css/font-awesome.min.css}"  />
+	</head>
+</html>

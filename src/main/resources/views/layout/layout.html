@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.thymeleaf.org">
+<head th:include="layout/header :: headerFragment">
+ <title id="pageTitle">Spring MVC Application</title>
+</head>
+<body>
+	<!-- Navigation -->
+	<div th:include="layout/navigation :: navigationFragment"></div>
+	<div class="container">
+		<div layout:fragment="content">
+			<!-- going to be replace by the pages -->
+		</div>
+		<!-- Footer -->
+		<div th:include="layout/footer :: footerFragment"></div>
+	</div>
+</body>
+</html>

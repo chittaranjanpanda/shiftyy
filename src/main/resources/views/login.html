@@ -1,0 +1,42 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.thymeleaf.org" layout:decorator="layout/layout">
+	<head>
+		<title id="pageTitle">Spring MVC :: Login</title>
+	</head>
+	<body>
+		<div class="container" layout:fragment="content">
+			<div class="row top-large-buffer"></div>
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4>
+								<i class="fa fa-fw fa-users"></i> Sign In
+							</h4>
+						</div>
+						<div class="panel-body">
+							<div class="alert alert-danger fade in" th:if="${param.error}" role="alert">
+								<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+								<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+								Wrong username or password
+							</div>
+							<form role="form" th:action="@{login}" method="POST" id="login" >
+							  <div class="form-group">
+							    <label for="username">Username:</label>
+							    <input type="text" class="form-control" id="username" name="username" required="required" placeholder="Enter Username" />
+							  </div>
+							  <div class="form-group">
+							    <label for="password">Password:</label>
+							    <input type="password" class="form-control" id="password" name="password" required="required" placeholder="Enter Password" />
+							  </div>
+							  <div class="checkbox">
+							    <label><input type="checkbox" /> Remember me</label>
+							  </div>
+							  <button type="submit" class="btn btn-default">Submit</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
