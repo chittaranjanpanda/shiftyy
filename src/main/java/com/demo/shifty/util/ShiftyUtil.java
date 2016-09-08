@@ -75,7 +75,7 @@ public class ShiftyUtil {
 						Double outTime = Double.valueOf(eachDay[4].replace(":", "."));
 						Double duration = Double.valueOf(eachDay[7].replace(":", "."));
 						
-						if(outTime > 21.30 && duration > 8){
+						if(outTime > 19.30 && duration > 8.00){
 							try {
 								daysWorked.add(xslDateFmt.format(pdfDateFmt.parse(eachDay[0])));
 							} catch (ParseException e) {
